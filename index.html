@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Екатерина Ахметханова — Учитель математики</title>
+  <meta name="description" content="Сайт-визитка молодого педагога: подходы, достижения, мероприятия, контакты." />
+  <meta name="color-scheme" content="light only">
+  <meta property="og:title" content="Екатерина Ахметханова — Учитель математики" />
+  <meta property="og:description" content="Современный, тёплый и яркий сайт-визитка. Подходы, достижения, мероприятия, видео." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/портеретное-фото-педагога.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body id="top">
+
+  <!-- ========== SITE HEADER / NAV (fixed) ========== -->
+  <header class="nav nav--pinned" role="banner">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Екатерина Ахметханова — Учитель математики">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="brand-text">Екатерина Ахметханова</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="menu" id="navmenu" aria-label="Основная навигация">
+        <a href="#about">Обо&nbsp;мне</a>
+        <a href="#methods">Подходы</a>
+        <a href="#achievements">Горизонты</a>
+        <a href="#events">Мероприятия</a>
+        <a href="#sertif">Сертификаты</a>
+        <a href="#video">Видео</a>
+        <a href="#contacts">Контакты</a>
+        <span class="menu-underline" aria-hidden="true"></span>
+      </nav>
+
+      <!-- Mobile burger -->
+      <button type="button" class="hamby" id="hamby" aria-label="Открыть меню" aria-controls="omenu" aria-expanded="false">
+        <span class="hamby__bar"></span>
+        <span class="hamby__bar"></span>
+        <span class="hamby__bar"></span>
+      </button>
+    </div>
+  </header>
+  <!-- spacer под фиксированный navbar -->
+  <div class="nav-spacer" aria-hidden="true"></div>
+
+  <!-- Fullscreen centered overlay menu -->
+  <div id="omenu" class="omenu" aria-hidden="true">
+    <div class="omenu__backdrop" id="omenuBackdrop"></div>
+    <nav class="omenu__panel" role="dialog" aria-modal="true" aria-label="Меню">
+      <ul class="omenu__list">
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#methods">Подходы</a></li>
+        <li><a href="#achievements">Горизонты</a></li>
+        <li><a href="#events">Мероприятия</a></li>
+        <li><a href="#sertif">Сертификаты</a></li>
+        <li><a href="#video">Видео</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-v10 container" aria-label="Вступительный блок">
+    <div class="hero-v10__grid">
+      <div class="hero-v10__left">
+        <span class="badge">Учитель математики • г. Ханты-Мансийск</span>
+        <h1 class="hero-v10__title">Современный и тёплый&nbsp;подход к математике</h1>
+        <p class="hero-v10__subtitle">«Результат нашей работы длиннее, чем наша жизнь»</p>
+        <div class="hero-v10__cta">
+          <a class="btn" href="#contacts" aria-label="Написать в мессенджер">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-7-8-3z" fill="currentColor"/></svg>
+            Написать
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-v10__right">
+        <figure class="hero-v10__portrait card" aria-label="Портрет">
+          <img class="img-zoomable" src="assets/портеретное-фото-педагога.jpg" alt="Портрет — Екатерина Ахметханова" loading="eager">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="container section-vh">
+    <div class="sec-head">
+      <h2 class="sec-title">Обо мне</h2>
+      <span class="sec-note">МБОУ «СОШ №5 им. И.З. Безноскова» • ОмГПУ</span>
+    </div>
+
+    <div class="about-wrap">
+      <article class="card about-lead">
+        <p class="about-lead__text">
+          <strong>Ахметханова Екатерина Александровна.</strong> Студентка ОмГПУ (профиль — математическое образование).
+          В педагогике опираюсь на принцип успешности: каждый ученик может быть консультантом или экспертом.
+        </p>
+        <ul class="about-chips">
+          <li class="chip">Дифференциация</li>
+          <li class="chip">Критерии оценивания</li>
+          <li class="chip">Перевёрнутый класс — максимум практики</li>
+          <li class="chip">Кейс-метод</li>
+        </ul>
+      </article>
+
+      <ul class="about-highlights">
+        <li class="hcard">
+          <div class="hcard__num">10+</div>
+          <div class="hcard__cap">лекций и выступлений</div>
+        </li>
+        <li class="hcard">
+          <div class="hcard__num">3&nbsp;года</div>
+          <div class="hcard__cap">педагогический стаж</div>
+        </li>
+        <li class="hcard">
+          <div class="hcard__num">I&nbsp;кат.</div>
+          <div class="hcard__cap">квалификационная категория</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== METHODS ========== -->
+  <section id="methods" class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">Педагогические подходы</h2>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 18H3L12 3z"/></svg></div>
+        <div><strong>Дифференциация</strong><br><span class="muted">Задачи в 3 уровня, гибкие группы, выбор темпа.</span></div>
+      </div>
+
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19l12-12-1.4-1.4z"/></svg></div>
+        <div><strong>Критериальное оценивание</strong><br><span>Рубрики, чек-листы, само- и взаимооценка.</span></div>
+      </div>
+
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v2H4zm0 5h10v2H4zm0 5h16v2H4z"/></svg></div>
+        <div><strong>Перевёрнутый класс</strong><br><span>максимум практики на уроке</span></div>
+      </div>
+
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v4H3zM3 11h12v8H3z"/></svg></div>
+        <div><strong>Кейс-метод</strong><br><span>Контекстные задачи из реальной жизни.</span></div>
+      </div>
+
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+        <div><strong>Игровые разминки</strong><br><span>Внимательность, счёт и логика.</span></div>
+      </div>
+
+      <div class="card method">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg></div>
+        <div><strong>Роль консультанта</strong><br><span>Каждый может стать экспертом для одноклассников.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section id="achievements" class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">Горизонты возможностей для молодых педагогов</h2>
+    </div>
+
+    <div class="rail">
+      <button class="navbtn prev" aria-label="Назад" onclick="railMove('ach',-1)">‹</button>
+      <div id="ach" class="track" aria-live="polite">
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/фото-с-научнои-конференции.jpg" alt="Фото с научной конференции">
+          <div class="ach-caption">Научно-практическая конференция</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/DSC_8620.jpg" alt="Проект «Знание.Лектор»">
+          <div class="ach-caption">Проект «Знание.Лектор»</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/форум-машук.jpg" alt="Форум «Машук»">
+          <div class="ach-caption">Всероссийский форум «Машук»</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/форум-машук2.jpg" alt="Форум «Машук» — финал">
+          <div class="ach-caption">Форум «Машук» — финал</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/представление-своего-проекта-на-всероссии-ском-форме-крапива.jpg" alt="Форум «Крапива» — защита проекта">
+          <div class="ach-caption">Форум «Крапива» — защита проекта</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/окончание-всероссии-ского-форму-крапива.jpg" alt="Форум «Крапива» — финал">
+          <div class="ach-caption">Форум «Крапива» — финал</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/мероприятие-ко-дню-учителя-в-омгпу.jpg" alt="День учителя в ОмГПУ">
+          <div class="ach-caption">День учителя в ОмГПУ</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/соревнование-по-волеи-болу-среди-педагогических-коллективов.jpg" alt="Спартакиада. Волейбол">
+          <div class="ach-caption">Спартакиада. Волейбол</div>
+        </article>
+
+        <article class="card ach-card card-snap">
+          <img class="ach-img img-zoomable" loading="lazy" src="assets/педагогическии-тур-сле-т.jpg" alt="Педагогический турслёт">
+          <div class="ach-caption">Педагогический турслёт</div>
+        </article>
+      </div>
+      <button class="navbtn next" aria-label="Вперёд" onclick="railMove('ach',1)">›</button>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section id="events" class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">Мероприятия с обучающимися</h2>
+    </div>
+
+    <div class="rail">
+      <button class="navbtn prev" aria-label="Назад" onclick="railMove('serf',-1)">‹</button>
+      <div id="serf" class="track" aria-live="polite">
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/посещение-географического-общества-с-классом.jpg" alt="Русское географическое общество">
+          <div class="event-overlay"><div class="event-title">Русское географическое общество</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/почещение-с-классом-биатлона-в-ханты-мансии-ске.jpg" alt="Биатлон. Зрительские потоки">
+          <div class="event-overlay"><div class="event-title">Биатлон. Зрительские потоки</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/пришкольныи-лагерь-2.jpg" alt="Пришкольный летний лагерь">
+          <div class="event-overlay"><div class="event-title">Пришкольный летний лагерь</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/пришкольныи-лагерь-была-вожатои.jpg" alt="Воспитатель в пришкольном лагере">
+          <div class="event-overlay"><div class="event-title">Воспитатель в пришкольном лагере</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/новгоднии-квиз-с-классом.jpg" alt="Новогодний квиз">
+          <div class="event-overlay"><div class="event-title">Новогодний квиз</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/новогоднее-представление-с-классом.jpg" alt="Новогоднее представление">
+          <div class="event-overlay"><div class="event-title">Новогоднее представление</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/фото-с-классом.jpg" alt="Линейка ко Дню знаний">
+          <div class="event-overlay"><div class="event-title">Линейка ко Дню знаний</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/фото-с-классом2.jpg" alt="Культура для школьников">
+          <div class="event-overlay"><div class="event-title">Культура для школьников</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/фото-с-классом-4.jpg" alt="Профессиональные пробы в ЮГУ">
+          <div class="event-overlay"><div class="event-title">Профессиональные пробы в ЮГУ</div></div>
+        </article>
+
+        <article class="event-card card-snap">
+          <img class="img-zoomable" loading="lazy" src="assets/фото-с-классом-3.jpg" alt="Мероприятие ко Дню учителя">
+          <div class="event-overlay"><div class="event-title">Мероприятие ко Дню учителя</div></div>
+        </article>
+      </div>
+      <button class="navbtn next" aria-label="Вперёд" onclick="railMove('serf',1)">›</button>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section id="sertif" class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">Курсы повышения квалификации</h2>
+      <span class="sec-note">подтверждающие документы</span>
+    </div>
+
+    <div class="rail">
+      <button class="navbtn prev" aria-label="Назад" onclick="railMove('certs',-1)">‹</button>
+      <div id="certs" class="track" aria-live="polite">
+        <a class="event-card card-snap" href="assets/Удостоверение.png" onclick="openLightbox(this.href,'Удостоверение 1');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение.png" alt="Удостоверение 1">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение2.png" onclick="openLightbox(this.href,'Удостоверение 2');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение2.png" alt="Удостоверение 2">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение3.png" onclick="openLightbox(this.href,'Удостоверение 3');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение3.png" alt="Удостоверение 3">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение4.png" onclick="openLightbox(this.href,'Удостоверение 4');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение4.png" alt="Удостоверение 4">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение5.png" onclick="openLightbox(this.href,'Удостоверение 5');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение5.png" alt="Удостоверение 5">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение6.png" onclick="openLightbox(this.href,'Удостоверение 6');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение6.png" alt="Удостоверение 6">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение7.png" onclick="openLightbox(this.href,'Удостоверение 7');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение7.png" alt="Удостоверение 7">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+        <a class="event-card card-snap" href="assets/Удостоверение8.png" onclick="openLightbox(this.href,'Удостоверение 8');return false;">
+          <img class="img-zoomable" loading="lazy" src="assets/Удостоверение8.png" alt="Удостоверение 8">
+          <div class="event-overlay"><div class="event-title"></div></div>
+        </a>
+      </div>
+      <button class="navbtn next" aria-label="Вперёд" onclick="railMove('certs',1)">›</button>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO (placeholder) ========== -->
+  <section class="container" id="video">
+    <div class="sec-head">
+      <h2 class="sec-title">Видеофрагмент урока</h2>
+      <p class="sec-note">Полная версия появится позже.</p>
+    </div>
+    <div class="card video-placeholder" aria-label="Видео появится позже">
+      <div class="vp__icon" aria-hidden="true">▶</div>
+      <div class="vp__text">Видео скоро будет загружено</div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTS ========== -->
+  <section id="contacts" class="container">
+    <div class="sec-head">
+      <h2 class="sec-title">Контакты</h2>
+      <span class="sec-note">быстрая связь</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card contact-col">
+        <h3>Telegram</h3>
+        <p class="contact-actions">
+          <a class="btn" href="https://t.me/Aekaterinaaleks" target="_blank" rel="noopener">Открыть в Telegram</a>
+        </p>
+        <p class="muted">Сканируйте QR, чтобы перейти в Telegram.</p>
+        <img class="qr img-zoomable" src="assets/qr-код-на-телеграмм.jpg" alt="QR — Telegram">
+      </div>
+
+      <div class="card contact-col">
+        <h3>VK</h3>
+        <p class="contact-actions">
+          <a class="btn btn-outline" href="https://vk.com/id225379163" target="_blank" rel="noopener">Открыть профайл VK</a>
+        </p>
+        <p class="muted">Сканируйте QR, чтобы перейти в VK.</p>
+        <img class="qr img-zoomable" src="assets/qr-код-на-вк.jpg" alt="QR — VK">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © <span id="y"></span> Екатерина Ахметханова • Учитель математики • МБОУ «СОШ №5 им. И.З. Безноскова», Ханты-Мансийск
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <dialog id="lightbox" class="lightbox" aria-label="Просмотр изображения">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Закрыть">×</button>
+    <img id="lightbox-img" src="" alt="">
+  </dialog>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
