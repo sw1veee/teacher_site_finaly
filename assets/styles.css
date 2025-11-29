@@ -341,3 +341,393 @@ section{padding:52px 0}
 /* курсоры */
 img.img-zoomable{ cursor:zoom-in }
 .hero-v10__portrait img{ cursor:default }
+
+/* ===== VIDEO (компактный hero, без чёрных углов) ===== */
+.video-hero{
+  padding:24px 22px 26px;
+  border-radius:24px;
+  background:
+    radial-gradient(520px 220px at 100% -20%, #fff5eb 0, transparent 60%),
+    var(--card);
+  border:1px solid #f2eae4;
+  box-shadow:var(--shadow);
+  display:grid;
+  place-items:center;
+}
+
+/* Общая «рамка» для постера/видео */
+.video-shell{
+  width:100%;
+  max-width:760px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;          /* обрезаем углы у всего содержимого */
+  box-shadow:var(--shadow);
+  background:#000;          /* фон за видео */
+}
+
+/* Постер до клика */
+.video-shell__poster{
+  position:relative;
+  cursor:pointer;
+  isolation:isolate;
+}
+.video-shell__poster img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+
+/* Кнопка Play */
+.video-shell__play{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:78px;
+  height:78px;
+  border-radius:999px;
+  border:0;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.video-shell__play-icon{
+  font-size:32px;
+  margin-left:3px;
+  color:var(--primary);
+}
+.video-shell__play:hover{
+  transform:translateY(-1px) scale(1.04);
+  box-shadow:0 24px 55px rgba(0,0,0,.38);
+  background:#fff;
+}
+.video-shell__play:active{
+  transform:translateY(1px) scale(.97);
+}
+
+/* Верхняя ленточка */
+.video-shell__ribbon{
+  position:absolute;
+  left:12px;
+  top:12px;
+  padding:5px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  font-size:12px;
+  font-weight:600;
+  color:var(--muted);
+  box-shadow:0 10px 26px rgba(31,41,55,.16);
+}
+
+/* Нижняя мета-чипы */
+.video-shell__meta{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.video-shell__chip{
+  padding:4px 9px;
+  border-radius:999px;
+  background:rgba(15,23,42,.9);
+  color:#fff;
+  font-size:11.5px;
+  font-weight:500;
+}
+
+/* Реальный плеер — вписывается в ту же рамку */
+.video-shell__player{
+  display:none;             /* показываем по клику */
+  width:100%;
+  height:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;         /* без чёрных полос по бокам */
+  border:0;
+  border-radius:0;          /* скругление теперь у .video-shell */
+  background:#000;
+}
+
+/* Адаптив */
+@media (max-width:720px){
+  .video-hero{
+    padding:20px 18px 22px;
+  }
+  .video-shell__play{
+    width:68px;
+    height:68px;
+  }
+  .video-shell__ribbon{
+    left:10px;
+    top:10px;
+    font-size:11.5px;
+    padding:4px 10px;
+  }
+  .video-shell__chip{
+    font-size:11px;
+  }
+}
+@media (max-width:480px){
+  .video-shell__meta{
+    right:10px;
+    max-width:calc(100% - 20px);
+  }
+}
+
+/* Фрейм вокруг видео: именно он режет края */
+.video-shell{
+  width:100%;
+  max-width:760px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;          /* ОБЯЗАТЕЛЬНО: обрезаем углы */
+  box-shadow:var(--shadow);
+  background:#000;          /* фон за кадром, если вдруг загрузка */
+}
+
+/* Постер до клика — немного увеличиваем, чтобы срезать чёрные поля */
+.video-shell__poster img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  transform:scale(1.03);        /* лёгкий зум */
+  transform-origin:center;
+}
+
+/* Сам плеер — тот же приём, чтобы не было чёрных углов */
+.video-shell__player{
+  display:none;                 /* показывается по клику JS */
+  width:100%;
+  height:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border:0;
+  border-radius:0;
+  background:#000;
+  transform:scale(1.03);        /* такой же зум, чтобы совпадало с постером */
+  transform-origin:center;
+}
+
+/* ===== ESSAY / MATERIAL BLOCK (финальная версия) ===== */
+#essay .sec-head{
+  margin-bottom:16px;
+}
+
+/* Карточка-обёртка */
+.essay-card{
+  padding:0;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid #f1ebe6;
+  box-shadow:var(--shadow);
+  background:var(--card);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Шапка — спокойная, как у материалов */
+.essay-head{
+  padding:16px 22px 14px;
+  background:
+    radial-gradient(420px 200px at -10% -40%, #fff7ef 0, transparent 60%),
+    radial-gradient(420px 200px at 110% -40%, #fff1e6 0, transparent 60%),
+    #fffdf9;
+  border-bottom:1px solid #f3e8e2;
+}
+
+.essay-head__left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.essay-head__tag{
+  margin:0;
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.essay-head__title{
+  margin:0;
+  font-size:19px;
+  font-weight:700;
+}
+
+.essay-head__meta{
+  margin:0;
+  font-size:13.5px;
+  color:var(--muted);
+}
+
+/* Тело материала */
+.essay-body{
+  position:relative;
+  padding:16px 22px 18px;
+}
+
+/* Прокручиваемый текст */
+.essay-scroll{
+  max-height:480px;              /* большое окно в свернутом виде */
+  overflow:auto;
+  padding-right:8px;
+  font-size:16px;
+  line-height:1.7;
+}
+.essay-scroll p{
+  margin:0 0 10px 0;
+}
+
+/* Эпиграф */
+.essay-epigraph{
+  font-style:italic;
+  margin-bottom:14px;
+}
+.essay-epigraph span{
+  display:inline-block;
+  margin-top:4px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Градиент снизу, когда текст свёрнут */
+.essay-fade{
+  pointer-events:none;
+  position:absolute;
+  left:0; right:0; bottom:18px;
+  height:70px;
+  background:linear-gradient(180deg, rgba(255,253,249,0) 0%, #fffdf9 70%);
+  opacity:1;
+  transition:opacity .18s;
+}
+
+/* Футер с кнопками */
+.essay-footer{
+  padding:12px 22px 16px;
+  border-top:1px solid #f3e8e2;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* Кнопка "Читать полностью" — лёгкая */
+.essay-toggle{
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid #f1dcd0;
+  background:#fff7ef;
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s, box-shadow .18s, transform .08s;
+}
+.essay-toggle:hover{
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.essay-toggle:active{
+  transform:translateY(1px);
+}
+
+/* Кнопка скачивания чуть компактнее стандартной */
+.essay-download{
+  padding-inline:16px;
+}
+
+/* Развёрнутое состояние */
+.essay-body.is-expanded .essay-scroll{
+  max-height:none;
+}
+.essay-body.is-expanded .essay-fade{
+  opacity:0;
+}
+
+/* Адаптив */
+@media (max-width:720px){
+  .essay-footer{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .essay-download{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+}
+@media (max-width:480px){
+  .essay-body{
+    padding:14px 16px 16px;
+  }
+  .essay-scroll{
+    max-height:280px;
+  }
+}
+
+/* ===== ESSAY: оформление текста внутри ===== */
+
+/* Общие настройки набора */
+.essay-scroll{
+  max-height:340px;              /* как было */
+  overflow:auto;
+  padding-right:8px;
+  font-size:16px;
+  line-height:1.7;
+  text-align:justify;            /* выравнивание по ширине, как статья */
+  hyphens:auto;                  /* переносы слов (если браузер поддерживает) */
+}
+
+/* Абзацы: отступ первой строки + аккуратные интервалы */
+.essay-scroll p{
+  margin:0 0 10px 0;
+  text-indent:1.5em;             /* первая строка внутрь */
+}
+
+/* Первый абзац после эпиграфа — без красной строки и чуть крупнее */
+.essay-epigraph + p{
+  text-indent:0;
+  font-size:16.5px;
+  font-weight:500;
+}
+
+/* Эпиграф отдельно от остального текста */
+.essay-epigraph{
+  font-style:italic;
+  margin:0 0 16px 0;
+  padding:10px 14px;
+  border-radius:14px;
+  background:rgba(255, 244, 232, 0.8);
+  border-left:4px solid var(--primary);
+  text-indent:0;
+}
+.essay-epigraph span{
+  display:block;
+  margin-top:4px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Последний абзац — без лишнего отступа снизу */
+.essay-scroll p:last-child{
+  margin-bottom:0;
+}
+
+/* На узких экранах — чуть проще, чтобы не «пятнило» */
+@media (max-width:540px){
+  .essay-scroll{
+    font-size:15.5px;
+    line-height:1.65;
+  }
+  .essay-scroll p{
+    text-indent:1.2em;
+  }
+}

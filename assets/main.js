@@ -380,3 +380,56 @@ window.railMove = railMove;
   mo.observe(document.body, {subtree:true, childList:true});
 })();
 
+/* ===== VIDEO HERO: click poster to play ===== */
+(() => {
+  const posters = document.querySelectorAll('.video-hero__poster, .video-shell__poster');
+  if (!posters.length) return;
+
+  posters.forEach(poster => {
+    poster.addEventListener('click', () => {
+      const videoId = poster.getAttribute('data-video-target');
+      const video = videoId && document.getElementById(videoId);
+      if (!video) return;
+
+      poster.style.display = 'none';
+      video.style.display = 'block';
+      try { video.play(); } catch (_) {}
+    });
+  });
+})();
+
+/* ===== ESSAY "Читать полностью" ===== */
+(() => {
+  const btn = document.querySelector('.essay-toggle');
+  if (!btn) return;
+
+  const targetId = btn.getAttribute('data-target');
+  const body = document.getElementById(targetId);
+  if (!body) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = body.classList.toggle('is-expanded');
+    btn.textContent = expanded ? 'Свернуть эссе' : 'Читать полностью';
+  });
+})();
+
+/* ===== ESSAY: toggle "Читать полностью" ===== */
+(() => {
+  const card = document.querySelector('.essay-card');
+  if (!card) return;
+
+  const body = card.querySelector('.essay-body');
+  const btn  = card.querySelector('.essay-toggle');
+  if (!body || !btn) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = body.classList.toggle('is-expanded');
+    body.classList.toggle('is-collapsed', !expanded);
+    btn.textContent = expanded ? 'Свернуть текст' : 'Читать полностью';
+
+    // при разворачивании подскроллим начало блока в видимую область
+    if (expanded) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
