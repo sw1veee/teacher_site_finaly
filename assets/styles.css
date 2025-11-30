@@ -201,21 +201,24 @@ a:hover{
   transform:translate(-50%,-50%) rotate(-45deg);
 }
 
-/* OVERLAY MENU (основная навигация) */
+/* ==============================
+   OVERLAY MENU (основная навигация)
+   — одна колонка на всех высотах
+============================== */
+
 .omenu{
   position:fixed;
   left:0;
   right:0;
+  top:var(--nav-h);   /* под десктопной шапкой */
+  bottom:0;           /* до низа экрана */
   z-index:900;
-  top:var(--nav-h);
-  height:calc(100dvh - var(--nav-h));
   display:none;
   pointer-events:none;
 }
 @media (max-width:1024px){
   .omenu{
-    top:var(--nav-h-mobile);
-    height:calc(100dvh - var(--nav-h-mobile));
+    top:var(--nav-h-mobile); /* под мобильной шапкой */
   }
 }
 .omenu.is-open{
@@ -223,6 +226,7 @@ a:hover{
   pointer-events:auto;
 }
 
+/* полупрозрачный фон */
 .omenu__backdrop{
   position:absolute;
   inset:0;
@@ -235,25 +239,36 @@ a:hover{
   backdrop-filter:blur(2px);
 }
 
+/* центрируем карточку, сам вьюпорт не скроллится по горизонтали */
 .omenu__panel{
   position:absolute;
   inset:0;
-  display:grid;
-  place-items:center;
-  padding:24px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+  box-sizing:border-box;
 }
 
+/* КАРТОЧКА СПИСКА
+   - одна колонка
+   - ширина по контейнеру, без vw
+*/
 .omenu__list{
   list-style:none;
   margin:0;
-  padding:24px;
+  padding:20px 18px;
   display:grid;
-  gap:12px;
-  min-width:min(86vw, 460px);
+  gap:10px;
+
+  width:100%;
+  max-width:440px; /* на широких экранах не разваливается */
+
   background:var(--card);
   border-radius:24px;
   box-shadow:var(--shadow);
   border:1px solid #f0e7e4;
+
   transform:scale(.96);
   opacity:0;
   transition:transform .25s, opacity .25s;
@@ -266,10 +281,12 @@ a:hover{
 .omenu__list a{
   display:block;
   text-align:center;
-  padding:16px 18px;
+  padding:12px 14px;
   border-radius:14px;
   color:var(--text);
   font-weight:800;
+  font-size:15px;
+  line-height:1.3;
   text-decoration:none;
   border:1px solid transparent;
   transition:background .15s, border-color .15s, transform .08s;
@@ -282,6 +299,52 @@ a:hover{
 .omenu__list a:active{
   transform:translateY(1px);
 }
+
+/* ==============================
+   Низкие экраны (меньше места)
+   — чуть ужимаем карточку и текст
+============================== */
+@media (max-height: 650px){
+  .omenu__panel{
+    padding:12px;
+  }
+
+  .omenu__list{
+    padding:16px 14px;
+    gap:8px;
+    max-width:420px;
+  }
+
+  .omenu__list a{
+    padding:9px 10px;
+    font-size:14px;
+    line-height:1.25;
+  }
+}
+
+/* ==============================
+   Очень низкие экраны (<= 520px)
+   — всё ещё 1 колонка, просто компактнее
+============================== */
+@media (max-height: 520px){
+  .omenu__panel{
+    padding:10px;
+  }
+
+  .omenu__list{
+    padding:10px 10px;
+    gap:6px;
+    max-width:380px; /* блок физически меньше, остаётся фон вокруг */
+  }
+
+  .omenu__list a{
+    padding:6px 8px;
+    font-size:13px;
+    line-height:1.2;
+    text-align:center;
+  }
+}
+
 
 /* ==============================
    SECTIONS / CARDS / BUTTONS
@@ -1001,6 +1064,7 @@ img.img-zoomable{
   flex-direction:column;
 }
 
+/* Шапка */
 .essay-head{
   padding:16px 22px 14px;
   background:
@@ -1025,20 +1089,14 @@ img.img-zoomable{
   color:var(--muted);
 }
 
+/* Тело */
 .essay-body{
   position:relative;
   padding:16px 22px 18px;
 }
-.essay-body.is-collapsed .essay-scroll{
-  max-height:340px;
-}
-.essay-body.is-expanded .essay-scroll{
-  max-height:none;
-}
 
 /* Прокручиваемый текст */
 .essay-scroll{
-  max-height:340px;
   overflow:auto;
   padding-right:8px;
   font-size:16px;
@@ -1046,6 +1104,15 @@ img.img-zoomable{
   text-align:justify;
   hyphens:auto;
 }
+
+/* Ограничение высоты только в свёрнутом состоянии */
+.essay-body.is-collapsed .essay-scroll{
+  max-height:340px;
+}
+.essay-body.is-expanded .essay-scroll{
+  max-height:none;
+}
+
 .essay-scroll p{
   margin:0 0 10px 0;
   text-indent:1.5em;
@@ -1128,6 +1195,9 @@ img.img-zoomable{
   padding-inline:16px;
 }
 
+/* ===== Адаптив ===== */
+
+/* планшеты и просто узкий экран */
 @media (max-width:720px){
   .essay-footer{
     flex-direction:column;
@@ -1139,19 +1209,49 @@ img.img-zoomable{
     text-align:center;
   }
 }
+
+/* <= 540px по ширине:
+   — чуть меньше шрифт
+   — ниже высота свёрнутого блока
+   — выше и толще градиент, чтобы не торчали буквы
+*/
 @media (max-width:540px){
   .essay-body{
     padding:14px 16px 16px;
   }
+
   .essay-scroll{
-    font-size:15.5px;
+    font-size:15px;
     line-height:1.65;
-    max-height:280px;
+    padding-right:6px;
   }
+
   .essay-scroll p{
     text-indent:1.2em;
   }
+
+  .essay-body.is-collapsed .essay-scroll{
+    max-height:260px;
+  }
+
+  .essay-fade{
+    bottom:12px;
+    height:90px;
+    background:linear-gradient(180deg, rgba(255,253,249,0) 0%, #fffdf9 80%);
+  }
 }
+
+/* Совсем узкие телефоны (около 400px по ширине) */
+@media (max-width:400px){
+  .essay-scroll{
+    font-size:14.5px;
+    line-height:1.6;
+  }
+  .essay-body.is-collapsed .essay-scroll{
+    max-height:235px;
+  }
+}
+
 
 /* ==============================
    EDUCATIONAL PROJECT
@@ -1320,3 +1420,4 @@ img.img-zoomable{
   aspect-ratio: 16 / 9;
   border: 0;
 }
+
